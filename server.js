@@ -16,7 +16,7 @@ app.get('/', (req, res) => {
     res.status(200).send(`Welcome to my portfolio`);
 });
 
-app.use('/github', require('./routes/github'));
+app.use('/github', require('./Routes/github'));
 
 app.get('*', (req,res) => {
     res.status(404).send('404 Page Not Found');

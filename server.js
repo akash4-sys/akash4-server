@@ -23,5 +23,5 @@ app.get('*', (req,res) => {
 });
 
 app.listen(PORT, (req, res) => {
-    console.log('Backend server is running');
+    console.log('Portfolio Backend server is running');
 })

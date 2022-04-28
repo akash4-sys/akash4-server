@@ -1,9 +1,11 @@
 const express = require('express');
 const cors = require('cors');
+const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const bodyParser = require('body-parser');
 
 dotenv.config({path:'./config.env'});
+require('./config/db');
 
 const PORT = process.env.PORT || 80;
 
@@ -17,6 +19,7 @@ app.get('/', (req, res) => {
 });
 
 app.use('/github', require('./Routes/github'));
+app.use('/contactform', require('./Routes/contactform'));
 
 app.get('*', (req,res) => {
     res.status(404).send('404 Page Not Found');
